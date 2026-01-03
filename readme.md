@@ -95,26 +95,32 @@ Capture example
 
 ## How it works
 
-The USB dongle records 802.15.4 packets, convert to a JSON format and transfer via COM port at 1Mbit/s.
-The extcap process inconing JSON payload and convert to wireshark pcapng TAP (LINKTYPE_IEEE802_15_4_TAP, 283, DLT_IEEE802_15_4_TAP).
+The USB dongle records 802.15.4 packets, converts to a JSON format and transfers via COM port at 1Mbit/s.
+The extcap processes incoming JSON payloads and converts to wireshark pcapng TAP (LINKTYPE_IEEE802_15_4_TAP, 283, DLT_IEEE802_15_4_TAP).
 
 The JSON format is:
-L = length
-Q = LQI
-R = RSSI
-C = channel
-S = string of hexadecimal representation of 802.15.4 packet
+
+  L = length
+  Q = LQI
+  R = RSSI
+  C = channel
+  S = string of hexadecimal representation of 802.15.4 packet
 
 Example:
-{"L":50,"Q":255,"R":-94,"S":"4188a31e48ffff00000912fcff000001cc0885dafeffd76b0828f6ea32000885dafeffd76b0800295e19cad6ebd84ca2aee2"}
 
+```json
+{"L":50,"Q":255,"R":-94,"S":"4188a31e48ffff00000912fcff000001cc0885dafeffd76b0828f6ea32000885dafeffd76b0800295e19cad6ebd84ca2aee2"}
+```
 
 The USB dongle accepts channel selection via a JSON payload.
-C = channel
 
-Example:
+Example, C = channel:
+
+```json
 {"C":11}
-when sent to the usb dongle Will select channel 11, can be used at anytime
+```
+
+when sent to the usb dongle will select channel 11, can be used at anytime.
 
 ## How to compile
 
@@ -140,7 +146,7 @@ and to compile the Sonoff sniffer:
 ## What's next
 
 This is a hobby project, so I do it for learning and fun.
-Here are some wish list items that I have in mind
+Here are some wish list items that I have in mind:
 - Convert extcap to Python so it will be portable to Linux and Mac.
 - Port to other hardware from other vendor (ATSAMR21 and TI2652P)
 - Improve BSP when porting evolves
