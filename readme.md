@@ -25,7 +25,7 @@ A [SONOFF Zigbee 3.0 USB DONGLE Plus-E](https://sonoff.tech/product/gateway-and-
 
 ![SONOFF USB DONGLE Plus-E](/docs/Sonoff%20USB%20dongle%20Plus-E.PNG)
 
-And a computer running Windows 10 or Windows 11 with Wireshark.
+And a computer running Windows 10 or Windows 11 or linux with Wireshark.
 
 ## Firmware Flashing
 
@@ -69,9 +69,9 @@ If you are interested in wireshark Extcap, you can refer to wireshark doc [8.2. 
 ## How to record packets
 
 Once a USB dongle is flashed with sniffer firmware and wireshark Extcap is copied in one of wireshark extcap folders, packet capture can begin.
-Plug the USB dongle in one of the available USB port. Drivers should be automatically detected on Windows 10 or Windows 11.
+Plug the USB dongle in one of the available USB port. Drivers should be automatically detected.
 Start wireshark.
-A list of available COM port should be displayed in the bottom window
+On a Windows computer, a list of available COM port should be displayed in the bottom window
 ![wireshark start screen](/docs/wireshark_start_screen.PNG)
 
 Click on the gear next to the COM port corresponding to USB DONGLE COM port being used.
